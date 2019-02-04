@@ -1,0 +1,40 @@
+body{
+  font-family: 'Acme', sans-serif;
+}
+
+#Title{
+  text-align: center;
+  margin-top: 60px;
+  font-size: 60px;
+  margin-bottom: 30px;
+  font-family: 'Acme', sans-serif;
+}
+
+#Poster{
+  margin-top: 50px
+}
+
+#PosterTitle{
+  text-align:left;
+  font-family: 'Acme', sans-serif;
+}
+
+#PongIntroduction{
+  text-align: left;
+}
+
+#Introduction{
+  font-size: 20px;
+}
+#pongcapture{
+  margin-top: 30px;
+  margin-left: 20px;
+}
+#Figure{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#otherpage{
+  color: red;
+}
