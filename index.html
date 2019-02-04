@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Singing synthesis</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+
+  </head>
+
+  <body class="Top">
+
+    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+      <a class="navbar-brand">
+        <img alt="Brand" src="source/logo.png" height="25" width="25">
+      </a>
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand navbar-inverse" href="index.html"><b>Welcome</b></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="trainingresult.html" style="color:Orange;"><b>Training Result</b></a></li>
+          <li><a href="https://github.com/liuyuhanalex/Deep-reinforcement-learning" style="color:Violet;"><b>Github</b></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container" id="Begin">
+      <h1 id="Title">Singing synthesis</h1>
+
+      <div class="page-header">
+        <h1>Concatenation synthesis<small>连接合成</small></h1>
+      </div>
+
+      <div class="container">
+        <h2>1.Vocaloid</h2>
+        <iframe
+          src="https://www.youtube.com/watch?v=ups2SwPtqK0">
+        </iframe>
+      </div>
+
+      <div class="page-header">
+        <h1>Statistical parametric synthesis<small>参数合成</small></h1>
+      </div>
+
+      <div class="page-header">
+        <h1>WaveNet<small></small></h1>
+      </div>
+
+      <ol class="list-group">
+        <li class="list-group-item">论文原文</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Morbi leo risus</li>
+        <li class="list-group-item">Porta ac consectetur ac</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+      </ol>
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Introduction</h3>
+        </div>
+        <div class="panel-body">
+          <div class="col-sm-12">
+            <div class="row">
+              <div class="col-sm-6">
+                <h1><b>Introduction</b></h1>
+                <p id="Introduction">
+                  We noticed that computers can now automatically learn to play ATARI games,  they are beating world champions at Go, simulated quadrupeds are learning to run and leap, and robots are learning how to perform complex manipulation tasks that defy explicit programming.
+                  In our project, we aim at applying deep reinforcement learning to train a model that could master the game Pong from Pixels based on previous studies and change the parameters to get the best training model in the shortest time.</p>
+              </div>
+              <div class="col-sm-6">
+                <img src="source/pongcapture.PNG" alt="" height="280" width="450" id="pongcapture">
+              </div>
+            </div>
+            <p id="Introduction">
+              Reinforcement learning solves the difficult problem of correlating immediate actions with the delayed returns they produce. Like humans, reinforcement learning algorithms sometimes have to wait a while to see the fruit of their decisions. They operate in a delayed return environment, where it can be difficult to understand which action leads to which outcome over many time steps.
+              Reinforcement learning algorithms can be expected to perform better and better in more ambiguous, real-life environments while choosing from an arbitrary number of possible actions, rather than from the limited options of a video game. That is, with time we expect them to be valuable to achieve goals in the real world.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-info" id="Algorithm">
+        <div class="panel-heading">
+          <h3 class="panel-title">Algorithm</h3>
+        </div>
+        <div class="panel-body">
+          <div class="col-sm-12">
+            <h1><b>Algorithm</b></h1>
+          <p id="Introduction">
+            In reinforcement learning framework, the agent has an observation about environment. Then, according to inner mechanics, the agent will take one action for this observation. The action of the agent will change the environment, and the new environment will feedback a reward and a new observation to the agent. You can see Figure 1 for it.
+          </p>
+          <img src="source/figure1.png" alt="" id="Figure">
+          <p id="Introduction">
+            In this project, we will use policy gradient method which can directly give an action according to the observation(Murphy). A pretty popular solution is Actor-Critic framework. In this framework, there will be one policy function we can denote it as p(a|s), and one critic function we can denote it as Q(a, s) which can evaluate the value of certain action in specific state. We use deep neural network to approximate p(a|s) and the output of this function is a probability to adopt this action. As for Q(a, s), we will just consider the reward. We denote
+          </p>
+          <img src="source/figure2.png" alt="" id="Figure">
+          <p id="Introduction">in which a means one action. Si  is an observation. γ is a discount factor and rm is the reward which earned in position m of the series whose length is i + k. The cost function we will use is</p>
+          <img src="source/figure3.png" alt="" id="Figure">
+        </div>
+      </div></div>
+
+      <div class="panel panel-warning" id="Implementation">
+        <div class="panel-heading">
+          <h3 class="panel-title">Implementation method</h3>
+        </div>
+        <div class="panel-body">
+          <div class="col-sm-12">
+          <h1><b>Implementation method</b></h1>
+          <p id="Introduction">Andrej train the agent to beat the computer by building a Neural Network that takes in each image and outputs a command to AI to move up or down.</p>
+          <img src="source/figure4.png" alt="" id="Figure">
+          <p id="Introduction">Our Neural Network, based heavily on Andrej’s solution, will do the following:</p>
+          <ol id="Introduction">
+            <li>Take in images from the game and preprocess them (remove color, background, downsample etc.).</li>
+            <li>Use the Neural Network to compute a probability of moving up.</li>
+            <li>Sample from that probability distribution and tell the agent to move up or down.</li>
+            <li>If the round is over (you missed the ball or the opponent missed the ball), find whether you won or lost.</li>
+            <li>When the episode has finished(someone got to 21 points), pass the result through the backpropagation algorithm to compute the gradient for our weights.</li>
+            <li>After 10 episodes have finished, sum up the gradient and move the weights in the direction of the gradient.</li>
+            <li>Repeat this process until our weights are tuned to the point where we can beat the computer.</li>
+          </ol>
+        </div>
+        </div>
+      </div>
+
+      <div class="panel panel-danger" id="Resources">
+        <div class="panel-heading">
+          <h3 class="panel-title">Existing Resources</h3>
+        </div>
+        <div class="panel-body">
+          <div class="col-sm-12">
+          <h1><b>Existing Resources</b></h1>
+          <p id="Introduction"><a href="https://gym.openai.com/">OpenAI Gym</a>:
+            Gym is a toolkit for developing and comparing reinforcement learning algorithms. It makes no assumptions about the structure of your agent, and is compatible with any numerical computation library, such as TensorFlow or Theano.
+            The gym library is a collection of test problems — environments — that you can use to work out your reinforcement learning algorithms. These environments have a shared interface, allowing you to write general algorithms.
+          </p>
+        </div>
+      </div>
+      </div>
+
+      <!-- The Contact Section -->
+      <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+        <h2 class="w3-wide w3-center">CONTACT</h2>
+        <p class="w3-opacity w3-center"><i>Find some bugs? Please let me know!</i></p>
+        <div class="w3-row w3-padding-32">
+          <div class="w3-col m6 w3-large w3-margin-bottom">
+            <i class="fa fa-map-marker" style="width:30px"></i>Worcester Polytechnic Institute<br>
+            <i class="" style="width:30px"></i>100 Institute Road<br>
+            <i class="" style="width:30px"> </i>Worcester, MA | 01609-2280<br>
+          </div>
+          <div class="w3-col m6 w3-large w3-margin-bottom">
+            <i class="fa fa-envelope" style="width:30px"> </i>Yuhan Liu: yliu26@wpi.edu<br>
+          </div>
+        </div>
+      </div>
+      <!-- Add Google Maps -->
+
+      <div id="googleMap" style="height:400px;" class="w3-grayscale-max"></div>
+      <script>
+      function myMap()
+      {
+        myCenter=new google.maps.LatLng(42.2745754,-71.8084611);
+        var mapOptions= {
+          center:myCenter,
+          zoom:12, scrollwheel: false, draggable: false,
+          mapTypeId:google.maps.MapTypeId.ROADMAP
+        };
+        var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+        var marker = new google.maps.Marker({
+          position: myCenter,
+        });
+        marker.setMap(map);
+      }
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJkspyyVQuQGHm52GWHQ6aUESaZD0ZGRg&libraries=places&callback=myMap"></script>
+
+      <script>
+          // Automatic Slideshow - change image every 4 seconds
+          var myIndex = 0;
+          carousel();
+          function carousel() {
+              var i;
+              var x = document.getElementsByClassName("mySlides");
+              for (i = 0; i < x.length; i++) {
+                 x[i].style.display = "none";
+              }
+              myIndex++;
+              if (myIndex > x.length) {myIndex = 1}
+              x[myIndex-1].style.display = "block";
+              setTimeout(carousel, 4000);
+          }
+        </script>
+
+  </body>
+  <script src="index.css"></script>
