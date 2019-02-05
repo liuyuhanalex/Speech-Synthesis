@@ -53,16 +53,72 @@
       <div class="page-header">
         <h1>Statistical parametric synthesis<small>参数合成</small></h1>
       </div>
+        <h2>An HMM-based Singing Voice Synthesis System</h3>
+          <h3>1.论文原文
+            <a href="hmm.pdf">An HMM-based Singing Voice Synthesis System</a>
+          </h3>
+          <h3>2.基本结构</h3>
+          <img src="source/hmm.PNG">
+
 
       <div class="page-header">
         <h1>WaveNet<small></small></h1>
       </div>
 
-      <h3>1.论文原文</h3>
-      <a href="wavenet.pdf"><h3>wavenet.pdf</h3></a>
+      <h3>1.论文原文
+        <a href="wavenet.pdf">Wavenet:A generative model for raw audio</a>
+      </h3>
 
-      <h3>2.官网Demo</h3>
-      <a href="https://deepmind.com/blog/wavenet-generative-model-raw-audio/"><h3>Wavenet</h3></a>
+      <h3>2.官网Demo
+        <a href="https://deepmind.com/blog/wavenet-generative-model-raw-audio/">Wavenet</a>
+      </h3>
+
+      <h3>3.Tensorflow实现
+        <a href="https://github.com/ibab/tensorflow-wavenet">Github Link</a>
+        <h4 style="text-indent:2em">训练数据集链接
+          <a href="https://datashare.is.ed.ac.uk/handle/10283/2651">CSTR VCTK Corpus</a>
+        </h4>
+      </h3>
+
+      <h3>4.算法部分重点
+      </h3>
+
+      <div class="page-header">
+        <h1>Parametric Singing Synthesizer Based on Wavenet<small>基于Wavenet的参数歌声合成</small></h1>
+      </div>
+
+      <h3>1.论文原文
+        <a href="wavenetplus.pdf">A neural parametric singing synthesizer</a>
+      </h3>
+
+      <h3>2.官网Demo
+        <a href="https://mtg.github.io/singing-synthesis-demos/">NPSS</a>
+      </h3>
+
+      <h3>3.不完全实现
+        <a href="https://github.com/Mu-Y/SynthSing">Github Link</a>
+      </h3>
+
+      <div class="page-header">
+        <h1>Microsoft Xiaoice<small>微软小冰</small></h1>
+      </div>
+      <h3>1.论文原文
+        <a href="xiaoice.pdf">XiaoIce Band: A Melody and Arrangement Generation Framework for Pop Music</a>
+      </h3>
+
+      <h3>2.发展进程</h3>
+      <video  controls width="640">
+        <source src="source/xiaoice.webm" type="video/webm">
+      </video>
+      <h3>3.单曲《我知我新》</h3>
+      <video  controls width="640">
+        <source src="source/wozhiwoxin.webm" type="video/webm">
+      </video>
+
+
+
+
+
 
       <!-- The Contact Section -->
       <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
@@ -79,26 +135,3 @@
           </div>
         </div>
       </div>
-      <!-- Add Google Maps -->
-
-      <div id="googleMap" style="height:400px;" class="w3-grayscale-max"></div>
-      <script>
-      function myMap()
-      {
-        myCenter=new google.maps.LatLng(42.2745754,-71.8084611);
-        var mapOptions= {
-          center:myCenter,
-          zoom:12, scrollwheel: false, draggable: false,
-          mapTypeId:google.maps.MapTypeId.ROADMAP
-        };
-        var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
-        var marker = new google.maps.Marker({
-          position: myCenter,
-        });
-        marker.setMap(map);
-      }
-      </script>
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJkspyyVQuQGHm52GWHQ6aUESaZD0ZGRg&libraries=places&callback=myMap"></script>
-
-  </body>
-  <script src="index.css"></script>
