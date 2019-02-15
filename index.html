@@ -16,9 +16,10 @@
 
   </head>
 
-  <body class="Top col-xs-12">
+  <body class="Top col-xs-12 container-fluid" style="vertical-align: middle">
 
     <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
       <a class="navbar-brand">
         <img alt="Brand" src="source/logo.png" height="25" width="25">
       </a>
@@ -29,6 +30,7 @@
         <ul class="nav navbar-nav">
           <li><a href="https://github.com/liuyuhanalex/Speech-Synthesis" style="color:Violet;"><b>Github</b></a></li>
         </ul>
+      </div>
       </div>
     </nav>
 
@@ -67,6 +69,9 @@
         <h3 style="text-indent:1em">1.网址链接
           <a href="http://www.sinsy.jp/">Link</a>
         </h3>
+        <h3 style="text-indent:1em">2.XML格式乐谱事例
+          <a href="source/yuepu.xml" download>下载链接</a>
+        </h3>
 
         <h2>(3)Parametric Singing Synthesizer Based on Wavenet<small>基于Wavenet的参数歌声合成</small></h2>
 
@@ -94,6 +99,20 @@
           <h4 style="text-indent:2em"><3>Timbre Model</h4>
             <img src="source/timbremodel.PNG" width="640">
 
+       <h2>(4)Microsoft Xiaoice<small>微软小冰</small></h2>
+            <h3 style="text-indent:1em">1.论文原文
+              <a href="xiaoice.pdf">XiaoIce Band: A Melody and Arrangement Generation Framework for Pop Music</a>
+            </h3>
+
+            <h3 style="text-indent:1em">2.发展进程</h3>
+            <video  controls width="640">
+              <source src="source/xiaoice.webm" type="video/webm">
+            </video>
+            <h3 style="text-indent:1em">3.单曲《我知我新》</h3>
+            <video  controls width="640">
+              <source src="source/wozhiwoxin.webm" type="video/webm">
+            </video>
+
       <div class="page-header">
         <h1>3.WaveNet<small></small></h1>
       </div>
@@ -115,22 +134,31 @@
 
       <h3>4.算法部分重点
       </h3>
+      <h4 style="text-indent:1em"><1>直接使用原始波形图作为输入，每秒16000个样本（16-bit）</h4>
+        <img src="source/waveform.PNG" width="640">
+      <h4 style="text-indent:1em"><2>使用空洞（扩展）因果卷积（Dilated Casusal Convolutional）增加感受野</h4>
+        <img src="source/pucc.PNG" width="640">
+        <img src="source/dcc.PNG" width="640">
+      <h4 style="text-indent:1em"><3>使用了类似PixelCNN的Gated activation模块</h4>
+        <img src="source/gate.PNG" width="640">
+        <img src="source/gatemodel.PNG" width="640">
+
+
+
 
       <div class="page-header">
-        <h1>Microsoft Xiaoice<small>微软小冰</small></h1>
+        <h1>附录</h1>
       </div>
-      <h3>1.论文原文
-        <a href="xiaoice.pdf">XiaoIce Band: A Melody and Arrangement Generation Framework for Pop Music</a>
+      <h2>(1)WORLD vocoder
+        <a href="https://github.com/mmorise/World">Github Link</a>
+      </h2>
+      <h3 style="text-indent:1em">1.原理及使用方法
+        <a href="http://m.elecfans.com/article/625428.html">Link</a>
       </h3>
 
-      <h3>2.发展进程</h3>
-      <video  controls width="640">
-        <source src="source/xiaoice.webm" type="video/webm">
-      </video>
-      <h3>3.单曲《我知我新》</h3>
-      <video  controls width="640">
-        <source src="source/wozhiwoxin.webm" type="video/webm">
-      </video>
+      <h2>(2)NoiseGenerators
+        <a href="https://github.com/mmorise/NoiseGenerators">Github Link</a>
+      </h2>
 
 
 
